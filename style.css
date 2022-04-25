@@ -1,0 +1,477 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: Helvetica, arial, sans-serif;
+}
+
+html body {
+    line-height: 1.5;
+}
+
+#main {
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #000;
+    z-index: 1;
+}
+
+.nav {
+    display: flex;
+    list-style: none;
+}
+
+.nav .nav__item {
+    position: relative;
+    height: fit-content;
+    padding: 12px 24px;
+}
+
+.nav .nav__item:hover {
+    background-color: #ccc;
+}
+
+.nav .nav__item a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.nav .nav__item .nav__item--icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav .nav__item:hover a {
+    color: #333;
+}
+
+.nav .nav__item .subnav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    list-style: none;
+}
+
+.nav .nav__item:hover .subnav {
+    display: block;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav .nav__item .subnav .subnav__item {
+    min-width: 160px;
+    padding: 6px 12px;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+.nav .nav__item .subnav .subnav__item:hover {
+    opacity: 0.5;
+}
+
+.search {
+    line-height: 100%;
+}
+
+.search .search__btn {
+    width: 100%;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 0;
+    background-color: #333;
+}
+
+.search .search__btn:hover {
+    background-color: #ff0000;
+    cursor: pointer;
+    color: #333;
+}
+
+.search .search__btn .search__btn--icon {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#carousel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider {
+    width: 100%;
+    position: relative;
+    /* margin: 48px 0; */
+}
+
+.slider__item img {
+    width: 100%;
+    height: 100vmin;
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    0% {
+        transform: translateX(100%);
+        visibility: hidden;
+    }
+    100% {
+        transform: translateX(0%);
+        visibility: visible;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+        scale: 0;
+        transform: scaleX(0);
+    }
+    100% {
+        opacity: 1;
+        scale: 1;
+        transform: scaleX(1);
+    }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .text {
+        font-size: 11px;
+    }
+}
+
+#about {
+    width: 80%;
+    padding: 64px;
+}
+
+.section-heading {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+.section-subheading {
+    display: block;
+    margin-top: 24px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+.section-content {
+    margin-top: 24px;
+    font-size: 1.5rem;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+.members {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.members .member {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.members .member span {
+    font-size: 1.5rem;
+}
+.members .member img {
+    width: 200px;
+    height: 300px;
+    margin-top: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#tickets {
+    width: 100%;
+    color: #fff;
+    background-color: #000;
+    padding: 64px 16px;
+}
+
+.carb__list,
+.tour__list {
+    width: 100%;
+    max-width: 768px;
+    margin: 32px auto;
+    list-style: none;
+}
+
+.tour__list .tour__item {
+    padding: 8px 16px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.tour__list .tour__item .tour__item--content {
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.tour__list .tour__item .tour__item--content span {
+    margin-left: 12px;
+    padding: 4px 8px;
+    color: #fff;
+    /* font-weight: bold; */
+    background-color: #f44336;
+}
+
+.tour__list .tour__item .tour__item--counter {
+    display: inline-block;
+    margin-right: 12px;
+    padding: 0 8px;
+    float: right;
+    color: #fff;
+    background-color: #000;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.carb__list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.carb__list .carb__item {
+    width: 32%;
+    background-color: #fff;
+}
+
+.carb__list .carb__item img {
+    width: 100%;
+    height: 48%;
+    margin-bottom: 15px;
+}
+
+.carb__list .carb__item .detail {
+    padding: 0 16px;
+}
+
+.carb__list .carb__item .detail__item {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.6rem;
+}
+
+.carb__list .carb__item .detail__item.title {
+    font-weight: bold;
+}
+
+.carb__list .carb__item .detail__item.subtitle {
+    opacity: 0.8;
+    font-size: 1.8rem;
+    font-weight: 100;
+}
+
+.carb__list .carb__item .detail__item.btn {
+    padding: 8px 16px;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    font-size: 1.8rem;
+    font-weight: 100;
+}
+
+.carb__list .carb__item .detail__item.btn:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+#contact {
+    width: 100%;
+    padding: 64px 16px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 768px;
+    margin: 32px auto;
+    font-size: 1.6rem;
+    color: #000;
+}
+
+.contact-info__list {
+    width: 50%;
+    list-style: none;
+}
+
+.contact-info__list .contact-info__item i {
+    font-weight: bold;
+}
+
+.contact-info__input {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.contact-info__input div {
+    width: 100%;
+    display: flex;
+    margin-bottom: 8px;
+    font-size: inherit;
+}
+
+.contact-info__input div .half {
+    width: 50%;
+    padding: 0 8px;
+}
+button,
+input {
+    font-size: 1.6rem;
+}
+
+.contact-info__input div .half input {
+    max-width: 100%;
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+}
+
+.contact-info__input .contact-info__input--item {
+    width: 100%;
+    padding: 0 8px;
+}
+
+.contact-info__input .contact-info__input--item input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+}
+
+.contact-info__input--item.btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contact-info__input--item.btn button {
+    margin: 8px 0;
+    padding: 8px 16px;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 0;
+    text-transform: uppercase;
+}
+
+.contact-info__input--item.btn button:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+.map {
+    display: block;
+    width: 100%;
+    height: 100vmin;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+#footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 64px 16px;
+    background-color: #f1f1f1;
+    font-size: 2rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+#footer .footer__icons i:hover {
+    opacity: 0.5;
+}
+
+#footer .copyright {
+    margin-top: 24px;
+    font-size: 1.5rem;
+}
+
+#footer .copyright a {
+    color: #555;
+}
